@@ -61,6 +61,12 @@ else:
 
 print(activityList)
 
+#make sure no activity is a length of 1
+for row in activityList:
+    if len(row) != 2:
+        row.pop()
+
+
 
 #Merging activities
 stillMerging = True
