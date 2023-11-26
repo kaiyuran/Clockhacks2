@@ -57,7 +57,7 @@ if typeOfInput == "1":
 else:
     CSVPathOption = input(Fore.YELLOW +Style.BRIGHT+ "\nDo you want to use a nonstandard path for your csv?(y/n): ")
     if CSVPathOption.lower() == "y":
-        CSVPath = input("\nType the absolute path here: ")
+        CSVPath = input("\nType the absolute path here(without quotes): ")
     activityList = readCSV(CSVPath)
     
 #make sure no activity is a length of 1
@@ -104,7 +104,7 @@ saveToTxtFile = input(Fore.YELLOW +Style.BRIGHT+ "\nDo you want to save your act
 if saveToTxtFile.lower() == "y":
     txtPathOption = input(Fore.YELLOW +Style.BRIGHT+ "Do you want to use a nonstandard path for your text file?(y/n): ")
     if txtPathOption.lower() == "y":
-        txtPath = input("\nType the absolute path here: ")
+        txtPath = input("\nType the absolute path here(without quotes): ")
     with open(txtPath, "w") as textFile:
         textFile.write("My activity list:")
         for activityNum in range(len(activityList)):
@@ -116,7 +116,7 @@ saveToCSVFile = input(Fore.YELLOW +Style.BRIGHT+ "\nDo you want to save your act
 if saveToCSVFile.lower() == "y":
     CSVPathOption = input(Fore.YELLOW +Style.BRIGHT+ "Do you want to use a nonstandard path for your text file?(y/n): ")
     if CSVPathOption.lower() == "y":
-        CSVPath = input("\nType the absolute path here: ")
+        CSVPath = input("\nType the absolute path here(without quotes): ")
     writeCSV(CSVPath, activityList)
     print(Fore.GREEN+Style.NORMAL+"Successfully saved Activity data!")
     
