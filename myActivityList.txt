@@ -1,2 +1,2 @@
 My activity list:
-1. a + b + c + d: 4.0 minutes
+1. a + b + c: 3 minutes
