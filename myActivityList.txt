@@ -1,2 +1,8 @@
 My activity list:
-1. a + b + c: 3 minutes
+1. brushing + showering: 10.0 minutes
+2. breakfast + bus: 30.0 minutes
+3. work: 480.0 minutes
+4. lunch + talking + bus: 30.0 minutes
+5. groceries + gaming: 30.0 minutes
+6. cooking: 30.0 minutes
+7. brushing + reading: 20.0 minutes
