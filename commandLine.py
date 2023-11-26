@@ -67,28 +67,37 @@ stillMerging = True
 totalSavedTime = 0
 print("Here are the activities to be merged and save time")
 while stillMerging:
-    activity1 = random.randint(0, len(activityList)-2)
-    activity2 = activity1+1
-    print("\nActivity 1:",activityList[activity1][0])
-    print("Activity 2:",activityList[activity2][0])
-    print("You could save", min(activityList[activity1][1],activityList[activity2][1]), "minutes!")
-    mergeDecision = input("Do you want to merge activities?(y/n): ")
-    if mergeDecision.lower() == "y":
-        totalSavedTime += min(activityList[activity1][1],activityList[activity2][1])
-        # activity
-        activityList[activity1][0] = activityList[activity1][0] + " + " +activityList[activity2][0]
-        activityList[activity1][1] = max(activityList[activity1][1],activityList[activity2][1])
-        activityList.pop(activity2)
-        printList(activityList)
-        if len(activityList) == 1:
-            stillMerging = False
-            print("You have already merged everything together!")
-            
-    else:
-        if input("Do you wan't to stop merging?(y/n): ") == "y":
+    if len(activityList) > 1:
+        activity1 = random.randint(0, len(activityList)-2)
+        activity2 = activity1+1
+        print("\nActivity 1:",activityList[activity1][0])
+        print("Activity 2:",activityList[activity2][0])
+        print("You could save", min(activityList[activity1][1],activityList[activity2][1]), "minutes!")
+        mergeDecision = input("Do you want to merge activities?(y/n): ")
+        if mergeDecision.lower() == "y":
+            totalSavedTime += min(activityList[activity1][1],activityList[activity2][1])
+            # activity
+            activityList[activity1][0] = activityList[activity1][0] + " + " +activityList[activity2][0]
+            activityList[activity1][1] = max(activityList[activity1][1],activityList[activity2][1])
+            activityList.pop(activity2)
             printList(activityList)
-            stillMerging = False
+            if len(activityList) == 1:
+                stillMerging = False
+                print("\nYou have already merged everything together!\n")
+                
+        else:
+            if input("Do you wan't to stop merging?(y/n): ") == "y":
+                printList(activityList)
+                stillMerging = False
+
+    else:
+        print("\nYou have already merged everything together!\n")
+        printList(activityList)
+        stillMerging = False
 print("In total, you have saved", totalSavedTime, "minute(s)!")
+
+
+
 
 
 #save as text file
